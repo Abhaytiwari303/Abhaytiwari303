@@ -1,319 +1,77 @@
-# Complete Salesforce Project Guide - Step by Step
-
-## Project Requirements Summary
-- Create College, Course, and Student objects with proper relationships
-- When College is deleted, Courses should be deleted
-- When Course is deleted, Students should remain
-- Count of Courses in College
-- Student with DOB and auto-calculated Age
-- Student skills fields (10th, 12th, BTech percentages) with aggregate
-- Personal and Graduation details sections
-- Two users: Admin and Restricted user
-- Network access restrictions
+<h1 align="center">Hi 👋, I'm Abhay Tiwari</h1>
+<h3 align="center">A Passionate AI/ML Enthusiast | Developer | Final-Year B.Tech Student</h3>
 
 ---
 
-## STEP 1: CREATE CUSTOM OBJECTS
+## 👨‍💻 About Me
 
-### 1.1 Create College Object
-1. **Navigate**: Setup (gear icon) → Object Manager
-2. **Click**: Create → Custom Object
-3. **Fill Details**:
-   - Label: `College`
-   - Plural Label: `Colleges`
-   - Object Name: `College` (auto-filled)
-   - Record Name: `College Name`
-   - Data Type: `Text`
-4. **Optional Features** (check these):
-   - ✅ Allow Reports
-   - ✅ Allow Activities  
-   - ✅ Track Field History
-5. **Click**: Save
+🎓 I'm currently pursuing **B.Tech in Computer Science** from SRMSCET&R, Bareilly  
+💡 Actively building real-world projects in AI, Machine Learning, and Web Technologies  
+🚀 Always exploring new tools and technologies to solve real-life problems  
+📫 Reach me at **abhay3032003@gmail.com**
+- 📄 Know more about me: [[Resume](https://drive.google.com/file/d/1x1aV5M8_U96Lh98LMwbwX20yR1DjrKjV/view?usp=drive_link)]
+🌐 Portfolio Website: [Coming Soon]  
+🛠️ Tech Stack: Python, TensorFlow, Keras, React, Node.js, Streamlit, Git, and more
 
-### 1.2 Create Course Object
-1. **Navigate**: Setup → Object Manager
-2. **Click**: Create → Custom Object
-3. **Fill Details**:
-   - Label: `Course`
-   - Plural Label: `Courses`
-   - Object Name: `Course`
-   - Record Name: `Course Name`
-   - Data Type: `Text`
-4. **Optional Features**: Same as above
-5. **Click**: Save
+---
+### 🛠️ Languages and Tools:
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=opencv&logoColor=white)
+... *(add more)*
+---
+### 📊 GitHub Stats:
 
-### 1.3 Create Student Object
-1. **Navigate**: Setup → Object Manager
-2. **Click**: Create → Custom Object
-3. **Fill Details**:
-   - Label: `Student`
-   - Plural Label: `Students`
-   - Object Name: `Student`
-   - Record Name: `Student Name`
-   - Data Type: `Text`
-4. **Optional Features**: Same as above
-5. **Click**: Save
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Abhaytiwari303&theme=radical" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Abhaytiwari303&show_icons=true&theme=tokyonight&count_private=true" alt="GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Abhaytiwari303&layout=compact&theme=tokyonight" alt="Top Languages" />
+</p>
+
 
 ---
 
-## STEP 2: CREATE RELATIONSHIPS
+## 🔥 Featured Projects
 
-### 2.1 Create College-Course Relationship (Master-Detail)
-1. **Navigate**: Setup → Object Manager → Course
-2. **Click**: Fields & Relationships → New
-3. **Select**: Master-Detail Relationship → Next
-4. **Related To**: College → Next
-5. **Field Details**:
-   - Field Label: `College`
-   - Field Name: `College` (auto-filled)
-6. **Click**: Next → Next → Next
-7. **Field-Level Security**: Keep default → Next
-8. **Page Layouts**: Add to layout → Save
+Here are some of the projects I’m most proud of:
 
-### 2.2 Create Course-Student Relationship (Lookup)
-1. **Navigate**: Setup → Object Manager → Student
-2. **Click**: Fields & Relationships → New
-3. **Select**: Lookup Relationship → Next
-4. **Related To**: Course → Next
-5. **Field Details**:
-   - Field Label: `Course`
-   - Field Name: `Course`
-6. **Click**: Next → Next → Next
-7. **Field-Level Security**: Keep default → Next
-8. **Page Layouts**: Add to layout → Save
+### 📌 [SmartResume Generator](https://github.com/Abhaytiwari303/SmartResume-Generator)
+AI-powered tool that creates customized resumes using Google Generative AI and Streamlit.
+
+### 📌 [Eye Disease Detection Using Deep Learning](https://github.com/Abhaytiwari303/Eye-Disease-Detection-Using-Deep-Learning)
+SmartEye – a diagnostic tool for detecting Cataract, Diabetic Retinopathy, and Glaucoma using deep learning.
+
+### 📌 [Anemia Sense](https://github.com/Abhaytiwari303/Anemia-Sense-Leveraging-Machine-Learning-for-Precise-Anemia-Detection)
+A machine learning solution for accurate anemia detection based on health parameters.
+
+### 📌 [real_time_yolo](https://github.com/Abhaytiwari303/real_time_yolo)
+Real-time object detection using YOLOv8. Detects vehicles, people, and exports annotated videos.
+
+### 📌 [MNIST Image Classifier](https://github.com/Abhaytiwari303/MNIST-IMAGE-CLASSIFIER)
+A CNN-based digit recognition system built with TensorFlow/Keras on the MNIST dataset.
 
 ---
 
-## STEP 3: CREATE STUDENT FIELDS
+## 🏆 Achievements & Activities
 
-### 3.1 Date of Birth Field
-1. **Navigate**: Setup → Object Manager → Student
-2. **Click**: Fields & Relationships → New
-3. **Select**: Date → Next
-4. **Field Details**:
-   - Field Label: `Date of Birth`
-   - Field Name: `Date_of_Birth`
-5. **Click**: Next → Next → Next → Save
-
-### 3.2 Age Formula Field
-1. **Navigate**: Setup → Object Manager → Student
-2. **Click**: Fields & Relationships → New
-3. **Select**: Formula → Next
-4. **Field Details**:
-   - Field Label: `Age`
-   - Field Name: `Age`
-   - Formula Return Type: `Number`
-   - Decimal Places: `0`
-5. **Formula**:
-```
-IF(
-  ISBLANK(Date_of_Birth__c),
-  NULL,
-  FLOOR((TODAY() - Date_of_Birth__c) / 365.25)
-)
-```
-6. **Click**: Next → Next → Next → Save
-
-### 3.3 Academic Percentage Fields
-**Create these three fields one by one:**
-
-#### 3.3.1 Tenth Percentage
-1. **Navigate**: Setup → Object Manager → Student
-2. **Click**: Fields & Relationships → New
-3. **Select**: Number → Next
-4. **Field Details**:
-   - Field Label: `10th (%)`
-   - Field Name: `Tenth`
-   - Length: `5`
-   - Decimal Places: `2`
-5. **Click**: Next → Next → Next → Save
-
-#### 3.3.2 Twelfth Percentage
-1. **Repeat above steps** with:
-   - Field Label: `12th (%)`
-   - Field Name: `Twelfth`
-
-#### 3.3.3 BTech Percentage
-1. **Repeat above steps** with:
-   - Field Label: `BTech (%)`
-   - Field Name: `BTech`
-
-### 3.4 Aggregate Formula Field
-1. **Navigate**: Setup → Object Manager → Student
-2. **Click**: Fields & Relationships → New
-3. **Select**: Formula → Next
-4. **Field Details**:
-   - Field Label: `Aggregate %`
-   - Field Name: `Aggregate`
-   - Formula Return Type: `Number`
-   - Decimal Places: `2`
-5. **Formula**:
-```
-IF(
-  ( IF( NOT(ISBLANK(Tenth__c)), 1, 0 ) + IF( NOT(ISBLANK(Twelfth__c)), 1, 0 ) + IF( NOT(ISBLANK(BTech__c)), 1, 0 ) ) = 0,
-  NULL,
-  ( BLANKVALUE(Tenth__c,0) + BLANKVALUE(Twelfth__c,0) + BLANKVALUE(BTech__c,0) ) /
-    ( IF( NOT(ISBLANK(Tenth__c)), 1, 0 ) + IF( NOT(ISBLANK(Twelfth__c)), 1, 0 ) + IF( NOT(ISBLANK(BTech__c)), 1, 0 ) )
-)
-```
-6. **Click**: Next → Next → Next → Save
+- ✅ Participent at Smart India Hackathon (SIH)
+- 🥇 Naukri Young Turn Around Rank: **7111**
+- 👨‍💼 Placement Coordinator at SRMSCET&R
+- 🎓 Merit-based scholarship holder
 
 ---
 
-## STEP 4: CREATE ROLL-UP SUMMARY
+### 📫 Connect with Me:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&style=for-the-badge)](https://www.linkedin.com/in/abhaytiwari30/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:at3032003@gmail.com)
 
-### 4.1 Course Count on College
-1. **Navigate**: Setup → Object Manager → College
-2. **Click**: Fields & Relationships → New
-3. **Select**: Roll-Up Summary → Next
-4. **Field Details**:
-   - Field Label: `Course Count`
-   - Field Name: `Course_Count`
-5. **Summarized Object**: Course
-6. **Roll-Up Type**: COUNT
-7. **Click**: Next → Next → Next → Save
 
-### 4.2 Student Count Field on Course (for Flow)
-1. **Navigate**: Setup → Object Manager → Course
-2. **Click**: Fields & Relationships → New
-3. **Select**: Number → Next
-4. **Field Details**:
-   - Field Label: `Student Count`
-   - Field Name: `Student_Count`
-   - Length: `8`
-   - Decimal Places: `0`
-   - Default Value: `0`
-5. **Click**: Next → Next → Next → Save
 
 ---
-
-## STEP 5: ORGANIZE PAGE LAYOUTS
-
-### 5.1 Student Page Layout
-1. **Navigate**: Setup → Object Manager → Student
-2. **Click**: Page Layouts → Student Layout
-3. **Edit Layout**
-4. **Create Sections**:
-   - **Personal Details Section**: Add Name, Date of Birth, Age
-   - **Academic Details Section**: Add Course, 10th (%), 12th (%), BTech (%), Aggregate %
-5. **Save**
-
----
-
-## STEP 6: CREATE USERS AND PROFILES
-
-### 6.1 Create Restricted Profile
-1. **Navigate**: Setup → Profiles
-2. **Click**: New Profile
-3. **Clone From**: Standard User
-4. **Profile Name**: `Restricted User`
-5. **Click**: Save
-6. **Edit the Profile**:
-   - **Object Settings** → Set appropriate permissions for College, Course, Student
-   - **Field-Level Security** → Restrict sensitive fields
-7. **Save**
-
-### 6.2 Create Admin User
-1. **Navigate**: Setup → Users
-2. **Click**: New User
-3. **Fill Details** (use your email variations):
-   - First Name: `Admin`
-   - Last Name: `User`
-   - Email: `your.email+admin@domain.com`
-   - Username: `admin.user@yourorg.com`
-   - Profile: `System Administrator`
-4. **Click**: Save
-
-### 6.3 Create Restricted User
-1. **Navigate**: Setup → Users
-2. **Click**: New User
-3. **Fill Details**:
-   - First Name: `Restricted`
-   - Last Name: `User`
-   - Email: `your.email+restricted@domain.com`
-   - Username: `restricted.user@yourorg.com`
-   - Profile: `Restricted User`
-4. **Click**: Save
-
----
-
-## STEP 7: CONFIGURE NETWORK ACCESS
-
-### 7.1 Trusted IP Ranges
-1. **Navigate**: Setup → Network Access
-2. **Click**: New
-3. **Add IP Ranges** (example):
-   - Start IP: `192.168.1.1`
-   - End IP: `192.168.1.255`
-   - Description: `Office Network`
-4. **Save**
-
-### 7.2 Profile-Level IP Restrictions (Optional)
-1. **Navigate**: Setup → Profiles → Restricted User
-2. **Edit**
-3. **Login IP Ranges** → Add IP restrictions for this profile
-4. **Save**
-
----
-
-## STEP 8: CREATE FLOW FOR STUDENT COUNT
-
-### 8.1 Create Record-Triggered Flow
-1. **Navigate**: Setup → Flows
-2. **Click**: New Flow → Record-Triggered Flow
-3. **Object**: Student
-4. **Trigger**: Create, Update, Delete
-5. **Add Elements**:
-   - **Get Records**: Get Course record
-   - **Assignment**: Count students for that course
-   - **Update Records**: Update Course.Student_Count__c
-6. **Activate** the Flow
-
----
-
-## STEP 9: TESTING CHECKLIST
-
-### ✅ Test Cascade Delete
-- [ ] Create College → Create Course under it → Delete College (Course should delete)
-- [ ] Create Course → Create Student under it → Delete Course (Student should remain)
-
-### ✅ Test Counts
-- [ ] Verify College shows correct Course count
-- [ ] Verify Course shows correct Student count (if Flow is working)
-
-### ✅ Test Auto-Calculations
-- [ ] Enter Date of Birth → Verify Age calculates automatically
-- [ ] Enter academic percentages → Verify Aggregate calculates
-
-### ✅ Test User Access
-- [ ] Login as Admin → Verify full access
-- [ ] Login as Restricted User → Verify limited access
-- [ ] Test network restrictions (if configured)
-
----
-
-## TROUBLESHOOTING TIPS
-
-1. **If relationships don't work**: Check field API names end with `__c`
-2. **If formulas fail**: Check field references use API names with `__c`
-3. **If users can't login**: Check Profile permissions and IP restrictions
-4. **If counts don't update**: Check Roll-up summary configuration
-
----
-
-## COMPLETION CHECKLIST
-
-- [ ] College object created
-- [ ] Course object created with College master-detail
-- [ ] Student object created with Course lookup
-- [ ] DOB and Age fields working
-- [ ] Academic percentage fields created
-- [ ] Aggregate formula working
-- [ ] Course count roll-up on College
-- [ ] Student count field on Course
-- [ ] Page layouts organized
-- [ ] Two users created with different profiles
-- [ ] Network access configured
-- [ ] All testing completed successfully
-
-**Congratulations! Your Salesforce project is complete!** 🎉
