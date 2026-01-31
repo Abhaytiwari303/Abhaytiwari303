@@ -29,7 +29,7 @@
 
 📫 Reach me at **at3032003@gmail.com**
 
-📄 [**View My Resume**](https://drive.google.com/file/d/1x1aV5M8_U96Lh98LMwbwX20yR1DjrKjV/view?usp=drive_link)
+📄 [**View My Resume**](https://drive.google.com/file/d/1AtUQDD_ZXudVXYBLPnoeVCsEYMNhdyJU/view?usp=sharing)
 
 🌐 **Portfolio Website**: Coming Soon
 
